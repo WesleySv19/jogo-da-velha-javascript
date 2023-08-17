@@ -1,4 +1,5 @@
 const currentPlayer = document.querySelector('.currentPlayer')
+const restartBtn = document.querySelector('.restart')
 
 let selected
 let player = 'X'
@@ -64,3 +65,18 @@ function check () {
         }
     }
 }
+
+function restart () {
+    restartBtn.addEventListener('click', function() {
+        let empty = selected.some(item => item !== undefined && item !== null && item !== '')
+
+
+        if(!empty) {
+            alert('Ops, faça primeiro uma jogada.')
+        } 
+        
+        init()
+    })
+}
+
+restart()
